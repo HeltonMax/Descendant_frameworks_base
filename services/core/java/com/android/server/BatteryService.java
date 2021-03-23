@@ -249,9 +249,7 @@ public final class BatteryService extends SystemService {
             invalidChargerObserver.startObserving(
                     "DEVPATH=/devices/virtual/switch/invalid_charger");
         }
-        mBatteryLightEnabled = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_intrusiveBatteryLed);
-
+        
         mBatteryModProps = new BatteryProperties();
         mBatteryModProps.modLevel = -1;
         mBatteryModProps.modStatus = 1;
@@ -560,7 +558,6 @@ public final class BatteryService extends SystemService {
                 mHealthInfo.maxChargingVoltage != mLastMaxChargingVoltage ||
                 mHealthInfo.batteryChargeCounter != mLastChargeCounter ||
                 mInvalidCharger != mLastInvalidCharger ||
-                mOemFastCharger != mLastOemFastCharger ||
                 mBatteryModProps.modLevel != mLastModLevel ||
                 mBatteryModProps.modStatus != mLastModStatus ||
                 mBatteryModProps.modFlag != mLastModFlag ||
